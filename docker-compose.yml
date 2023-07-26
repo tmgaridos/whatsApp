@@ -1,0 +1,19 @@
+version: "3"
+services:
+  api:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: unless-stoppeddocker
+    container_name: whatsapp_notif_container
+    volumes:
+      - api_node_modules:/usr/src/app/node_modules
+    ports:
+      - 9090:9090
+    networks:
+      - default
+
+      
+volumes:
+ api_node_modules:
+  
